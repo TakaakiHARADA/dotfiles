@@ -3,6 +3,7 @@ scriptencoding utf-8
 set ambiwidth=double
 filetype plugin indent on " ファイルタイプに応じたプラグインやインデントをオン
 set incsearch " incremental search
+set wrapscan " 検索で一番最後まで行ったら最初に戻る
 set hlsearch " 検索結果ハイライト
 set smartindent " いい感じの自動インデント
 set belloff=all " no beep
@@ -28,7 +29,7 @@ nnoremap k gk
 
 let mapleader = "\<space>"
 nnoremap <silent> <leader>a ggvg
-nnoremap <silent> <leader><leader> :nohl<cr>
+nnoremap <silent> <leader><leader> :nohlsearch<cr>
 inoremap <silent> jj <esc>
 nnoremap <silent> + <c-a>
 nnoremap <silent> - <c-x>
