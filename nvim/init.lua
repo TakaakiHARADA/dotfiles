@@ -34,13 +34,14 @@ keymap.set('n', 'Y', 'y$', noresil)
 keymap.set('n', ';', ':', { noremap = true })
 -- move to head or tail of current line
 vim.g.mapleader = ' '
-keymap.set('n', '<leader>a', '^', noresil)
-keymap.set('v', '<leader>a', '^', noresil)
-keymap.set('n', '<leader>f', '$', noresil)
-keymap.set('v', '<leader>f', '$', noresil)
+keymap.set({ 'n', 'v' }, '<leader>a', '^', noresil)
+keymap.set({ 'n', 'v' }, '<leader>f', '$', noresil)
 -- type z+Enter to move current line to the top of screen, keeping cursor position
 keymap.set('n', 'z<CR>', 'zt', noresil)
 -- turn off highlight
 keymap.set('n', '<leader><leader>', ':nohl<CR>', noresil)
 -- exit terminal insert mode
 keymap.set('t', '<esc>', '<C-\\><C-n>', noresil)
+-- qw to do wq
+vim.cmd.cnoreabbrev('qw', 'wq')
+vim.cmd.cnoreabbrev('config', 'edit $MYVIMRC')
