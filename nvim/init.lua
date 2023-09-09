@@ -17,6 +17,9 @@ opt.smartcase = true
 opt.incsearch = true
 opt.wrapscan = true
 opt.virtualedit = "onemore"
+-- copy & paste --
+opt.clipboard = 'unnamedplus'
+opt.scrolloff = 3
 -- opt.whichwrap
 
 -- keymaps --
