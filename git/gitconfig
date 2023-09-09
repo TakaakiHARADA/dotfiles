@@ -1,0 +1,12 @@
+[core]
+	quotepath = false; 日本語文字化け回避
+	editor = vim; neovimでもいいかもしれんけど一応
+[alias]
+    lol = log --graph --decorate --pretty=oneline --all --abbrev-commit
+    co = checkout
+    cob = checkout -b
+    ss = status
+    cm = commit
+    log1 = log -1
+    log2 = log -2
+    log3 = log -3
