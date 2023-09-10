@@ -16,11 +16,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
-      - name: init
+
+      - name: install_neovim
         working-directory: ./init/
-        # 今はneovimしかないけどインストールするものが増えてきたらこっちにする
+        # インストールするものが増えてきたらこっちにする
         # run: ./install_all.sh
         run: ./install_neovim.sh
+
+      - name: install_rust
+        working-directory: ./init/
+        run: ./install_rust.sh
+
       - name: link
         working-directory: ./
         run: ./make_link.sh

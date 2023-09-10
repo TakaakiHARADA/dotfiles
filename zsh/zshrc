@@ -18,6 +18,9 @@ alias ls='ls --color=auto'
 alias lss='ls -lht --color=auto'
 alias la='ls -a --color=auto'
 
+# rust path
+path+=$HOME/.cargo/bin/
+
 if type "git" >/dev/null; then
     alias gs='git status'
 fi
