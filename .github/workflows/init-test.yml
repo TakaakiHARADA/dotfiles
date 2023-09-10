@@ -2,6 +2,7 @@
 name: "init script test"
 
 on:
+  workflow_dispatch:
   push:
     paths:
       - ".github/workflows/init-test.yml"
