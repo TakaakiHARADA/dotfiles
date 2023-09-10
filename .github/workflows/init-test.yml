@@ -4,7 +4,7 @@ name: "init script test"
 on:
   push:
     paths:
-      - "github/workflows/init_test.yml"
+      - ".github/workflows/init_test.yml"
       - "nvim/**"
       - "vim/**"
       - "zsh/**"
