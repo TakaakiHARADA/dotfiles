@@ -1,0 +1,25 @@
+# ネタ元: https://kotaro7750.hatenablog.com/entry/dotfile_ci#単体テスト
+name: "init script test"
+
+on:
+  push:
+    paths:
+      - "github/workflows/init_test.yml"
+      - "nvim/**"
+      - "vim/**"
+      - "zsh/**"
+      - "make_link.sh"
+
+jobs:
+  init-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: init
+        working-directory: ./init/
+        # 今はneovimしかないけどインストールするものが増えてきたらこっちにする
+        # run: ./install_all.sh
+        run: ./install_neovim.sh
+      - name: link
+        working-directory: .
+        run: ./make_link.sh
