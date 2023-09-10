@@ -6,6 +6,7 @@ on:
   push:
     paths:
       - ".github/workflows/init-test.yml"
+      - "init/**"
       - "nvim/**"
       - "vim/**"
       - "zsh/**"
