@@ -5,35 +5,32 @@ set -o pipefail
 set -u
 
 # vim
-cd "${HOME}"
-if [ -e .vimrc ]; then
+if [ -e ~/.vimrc ]; then
     echo "[ERROR] .vimrc already exists."
     exit 1
 else
-    ln -s .vimrc "${HOME}/dotfiles/vim/vimrc"
+    ln -s ~/dotfiles/vim/vimrc ~/.vimrc
 fi
 
 # neovim
-mkdir -p "${HOME}/.config/nvim/"
-cd "${HOME}/.config/nvim"
-if [ -e init.lua ]; then
+mkdir -p ~/.config/nvim/
+if [ -e ~/.config/nvim/init.lua ]; then
     echo "[ERROR] .config/nvim/init.lua already exists."
     exit 1
 else
-    ln -s init.lua "${HOME}/dotfiles/nvim/init.lua"
+    ln -s ~/dotfiles/nvim/ ~/.config/nvim/
 fi
 
 # zsh
-cd "${HOME}"
-if [ -e .zprofile ]; then
+if [ -e ~/.zprofile ]; then
     echo "[ERROR] .zprofile already exists."
     exit 1
 else
-    ln -s .zprofile "${HOME}/dotfiles/zsh/zprofile"
+    ln -s ~/dotfiles/zsh/zprofile ~/.zprofile 
 fi
 if [ -e .zshrc ]; then
     echo "[ERROR] .zshrc already exists."
     exit 1
 else
-    ln -s .zshrc "${HOME}/dotfiles/zsh/zshrc"
+    ln -s ~/dotfiles/zsh/zshrc ~/.zshrc 
 fi
