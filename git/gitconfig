@@ -1,6 +1,7 @@
 [core]
 	quotepath = false; 日本語文字化け回避
 	editor = vim; neovimでもいいかもしれんけど一応
+    rebase.autostash = true 
 [alias]
     lol = log --graph --decorate --pretty=oneline --all --abbrev-commit
     co = checkout
