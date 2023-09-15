@@ -36,6 +36,8 @@ keymap.set('n', ';', ':', { noremap = true })
 vim.g.mapleader = ' '
 keymap.set({ 'n', 'v' }, '<leader>a', '^', noresil)
 keymap.set({ 'n', 'v' }, '<leader>f', '$', noresil)
+keymap.set({ 'n', 'v' }, '<leader>gg', 'G', noresil)
+keymap.set('v', 'i', '<Esc>', noresil)
 -- type z+Enter to move current line to the top of screen, keeping cursor position
 keymap.set('n', 'z<CR>', 'zt', noresil)
 -- turn off highlight
