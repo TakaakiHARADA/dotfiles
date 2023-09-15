@@ -45,5 +45,6 @@ keymap.set('n', '<leader><leader>', ':nohl<CR>', noresil)
 -- exit terminal insert mode
 keymap.set('t', '<esc>', '<C-\\><C-n>', noresil)
 -- qw to do wq
-vim.cmd.cnoreabbrev('qw', 'wq')
-vim.cmd.cnoreabbrev('config', 'edit $MYVIMRC')
+vim.cmd('cnoreabbrev qw wq')
+vim.api.nvim_create_user_command('EditSettings', 'edit $MYVIMRC', {})
+vim.cmd('cnoreabbrev config EditSettings')
