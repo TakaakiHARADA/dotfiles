@@ -20,6 +20,16 @@ opt.virtualedit = "onemore"
 -- copy & paste --
 opt.clipboard = 'unnamedplus'
 opt.scrolloff = 3
+opt.listchars = {tab = '>-', trail = '*'}
+opt.diffopt = {
+  "vertical",
+  "internal",
+  "closeoff",
+  "hiddenoff",
+  "filler",
+  "indent-heuristics",
+  "algorithm:histogram"
+}
 -- opt.whichwrap
 
 -- keymaps --
