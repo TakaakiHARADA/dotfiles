@@ -27,7 +27,7 @@ opt.diffopt = {
   "closeoff",
   "hiddenoff",
   "filler",
-  "indent-heuristics",
+  "indent-heuristic",
   "algorithm:histogram"
 }
 -- opt.whichwrap
