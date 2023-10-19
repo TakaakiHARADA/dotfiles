@@ -22,18 +22,35 @@ set laststatus=2 " 常にstatus bar表示
 set virtualedit=onemore " 行末の1つ後ろまで編集可能になる
 set showmatch " 閉じかっこを入力すると一瞬だけ対応するかっこに移動
 set matchtime=1
+set virtualedit="onemore"
+set scrolloff=3 " 上下に3行ずつ表示される
+set listchars=tab:»-,trail:-,extends:»,precedes:«
 
-nnoremap j gj
-nnoremap k gk
 
 
 let mapleader = "\<space>"
-nnoremap <silent> <leader>a ggvg
+nnoremap j gj
+nnoremap k gk
+nnoremap <silent> <leader>a ggVG
+nnoremap <leader>h 0
+nnoremap <leader>l $
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 nnoremap <silent> <leader><leader> :nohlsearch<cr>
 inoremap <silent> jj <esc>
 nnoremap <silent> + <c-a>
 nnoremap <silent> - <c-x>
 nnoremap <silent> U <C-r>
 nnoremap Y y$ " Yで行末までyank C, Dとの類推
+vnoremap i <Esc>
+nnoremap ; :
+nnoremap <leader>gg G
+vnoremap <leader>gg G
+nnoremap z<CR> zt "z+Enterの際にカーソル位置を変えない
+cnoreabbrev qw wq
+command! EditVimrc vsplit $MYVIMRC
+cnoreabbrev config EditVimrc
 
 syntax on " 色付けon なんか最後に書いたほうがいいらしい
