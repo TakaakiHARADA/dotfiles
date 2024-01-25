@@ -13,6 +13,7 @@ opt.expandtab = true
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.ignorecase = true
+opt.wildignorecase = true -- ignore case on path completion
 opt.smartcase = true
 opt.incsearch = true
 opt.wrapscan = true
