@@ -11,3 +11,11 @@
     log1 = log -1
     log2 = log -2
     log3 = log -3
+[diff]
+    tool = vscode
+[difftool "vscode"]
+    cmd = code --wait --diff $LOCAL $REMOTE
+[merge]
+    tool = vscode
+[mergetool "vscode"]
+    cmd = code --wait --merge $REMOTE $LOCAL $BASE $MERGED

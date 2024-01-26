@@ -13,7 +13,7 @@ opt.expandtab = true
 opt.tabstop = 4
 opt.shiftwidth = 4
 opt.ignorecase = true
-opt.wildignorecase = true -- ignore case on path completion
+opt.wildignorecase = true -- case-insensitive path completion
 opt.smartcase = true
 opt.incsearch = true
 opt.wrapscan = true
@@ -49,6 +49,8 @@ keymap.set({ 'n', 'v' }, '<leader>a', '^', noresil)
 keymap.set({ 'n', 'v' }, '<leader>f', '$', noresil)
 keymap.set({ 'n', 'v' }, '<leader>gg', 'G', noresil)
 keymap.set('v', 'i', '<Esc>', noresil)
+-- replace selected text without copying it when pasting
+keymap.set('v', 'p', '"_dP')
 -- type z+Enter to move current line to the top of screen, keeping cursor position
 keymap.set('n', 'z<CR>', 'zt', noresil)
 -- turn off highlight
@@ -59,6 +61,5 @@ keymap.set('t', '<esc>', '<C-\\><C-n>', noresil)
 vim.cmd('cnoreabbrev qw wq')
 vim.api.nvim_create_user_command('EditSettings', 'edit $MYVIMRC', {})
 vim.cmd('cnoreabbrev config EditSettings')
--- type :s<Space> to start to substitute the searched text
--- copied from https://zenn.dev/vim_jp/articles/2023-06-30-vim-substitute-tips
+-- type :s<Space> to start to replace searched text
 vim.cmd('cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ":s" ? [getchar(), ""][1] .. "%s///g<Left><Left>" : "s"')
