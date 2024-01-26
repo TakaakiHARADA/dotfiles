@@ -59,3 +59,6 @@ keymap.set('t', '<esc>', '<C-\\><C-n>', noresil)
 vim.cmd('cnoreabbrev qw wq')
 vim.api.nvim_create_user_command('EditSettings', 'edit $MYVIMRC', {})
 vim.cmd('cnoreabbrev config EditSettings')
+-- type :s<Space> to start to substitute the searched text
+-- copied from https://zenn.dev/vim_jp/articles/2023-06-30-vim-substitute-tips
+vim.cmd('cnoreabbrev <expr> s getcmdtype() .. getcmdline() ==# ":s" ? [getchar(), ""][1] .. "%s///g<Left><Left>" : "s"')
